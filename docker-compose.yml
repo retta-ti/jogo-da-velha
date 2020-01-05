@@ -1,0 +1,19 @@
+version: '3.2'
+
+volumes:
+  data:
+
+services:
+  jogo_velha_app:
+    container_name: jogo-da-velha
+    image: retta/jogo-da-velha
+    restart: always
+    tty: true
+    build:
+      context: "."
+    ports:
+      - 4200:4200
+    volumes:
+      - type: bind
+        source: .
+        target: /projetos/jv
